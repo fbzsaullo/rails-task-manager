@@ -1,12 +1,13 @@
-<h1>My list</h1>
-<hr class="dashed">
+<h1>My Tasks</h1>
 
-<% @tasks.each do |task| %>
-  <div>
-    <input type="checkbox" id="scales" name="scales">
-    <label for="scales"><%= link_to task.title, task_path(task) %></label>
-  </div>
-<% end %>
-<hr class="dashed">
+<ul>
+  <% @tasks.each do |task| %>
+   <li><%= link_to task.title, task_path(task) %> |
+   <%= link_to "Delete",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
 
-<%= link_to('+ New task', new_path) %>
+<li><%= link_to 'Add new Task', new_path %></li>

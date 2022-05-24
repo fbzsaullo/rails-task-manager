@@ -1,7 +1,7 @@
 <h2><%= @task.title %></h2>
-<hr class="dashed">
-
 <p><%= @task.details %></p>
-<hr class="dashed">
+<p><%= @task.completed %></p>
 
-<%= link_to('Back to list', index_path) %>
+<%= link_to 'Back to Tasks', tasks_path %>
+/
+<%= link_to 'Edit a Task', edit_path %>
