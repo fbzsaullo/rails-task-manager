@@ -1,4 +1,5 @@
 <h1>My list</h1>
+<hr class="dashed">
 
 <% @tasks.each do |task| %>
   <div>
@@ -6,3 +7,6 @@
     <label for="scales"><%= link_to task.title, task_path(task) %></label>
   </div>
 <% end %>
+<hr class="dashed">
+
+<%= link_to('New task', new_path) %>
